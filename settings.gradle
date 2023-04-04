@@ -1,5 +1,8 @@
 rootProject.name = 'java-ddd-skeleton'
 
+
+// Include bounded contexts as subprojects
+
 include ':shared'
 project(':shared').projectDir = new File('src/shared')
 

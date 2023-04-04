@@ -1,8 +1,8 @@
 package tv.codely.mooc.courses.application;
 
+import lombok.Getter;
 import tv.codely.mooc.courses.domain.Course;
 import tv.codely.shared.domain.bus.query.Response;
-
 public final class CourseResponse implements Response {
     private final String id;
     private final String name;

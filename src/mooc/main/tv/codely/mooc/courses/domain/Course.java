@@ -24,9 +24,7 @@ public final class Course extends AggregateRoot {
 
     public static Course create(CourseId id, CourseName name, CourseDuration duration) {
         Course course = new Course(id, name, duration);
-
         course.record(new CourseCreatedDomainEvent(id.value(), name.value(), duration.value()));
-
         return course;
     }
 

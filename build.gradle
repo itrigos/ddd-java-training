@@ -7,9 +7,16 @@ allprojects {
   sourceCompatibility = 11
   targetCompatibility = 11
 
+  apply plugin: 'java'
+
   repositories {
     mavenCentral()
     maven { url 'https://repo.spring.io/milestone' }
+  }
+
+  task run(type: JavaExec) {
+    classpath = sourceSets.main.runtimeClasspath
+    main = 'tv.codely.apps.Starter'
   }
 
   ext {
@@ -39,6 +46,9 @@ allprojects {
     implementation 'org.elasticsearch.client:elasticsearch-rest-client:6.8.5'
     implementation 'org.elasticsearch.client:elasticsearch-rest-high-level-client:6.8.4'
     implementation 'mysql:mysql-connector-java:8.0.18'
+
+    compileOnly("org.projectlombok:lombok")
+    annotationProcessor("org.projectlombok:lombok")
 
     // Test
     testImplementation 'org.junit.jupiter:junit-jupiter-api:5.5.2'
